@@ -1,6 +1,4 @@
-
-class LoginPage {
-
+export default class LoginPage {
   constructor(page) {
     this.page = page;
   }
@@ -35,7 +33,7 @@ class LoginPage {
     await this.usernameField.fill(username);
     await this.continueButton.click();
     await this.page.waitForTimeout(1000);
-    console.log(password)
+    console.log(password);
     await this.passwordField.fill(password);
     await this.loginButton.click();
     await this.page.waitForTimeout(500);
@@ -48,5 +46,3 @@ class LoginPage {
     await this.page.waitForTimeout(1000);
   }
 }
-
-module.exports = LoginPage;

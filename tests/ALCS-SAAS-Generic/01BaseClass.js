@@ -1,17 +1,17 @@
-const { chromium } = require('playwright');
-const CommonData = require('../UtilsData/CommonData.js');
-const LoginPage = require('../ALCS-SAAS-PageObjectModel/LoginPage.js');
+import { chromium } from 'playwright';
+import CommonData from '../UtilsData/CommonData.js';
+import LoginPage from '../ALCS-SAAS-PageObjectModel/LoginPage.js';
 import { ExcellUtility } from '../ALCS-SAAS-Generic/04ExcelUtility.js';
 import { Databaseutility } from '../ALCS-SAAS-Generic/05DataBaseUtility.js';
 
-exports.BaseClass= class BaseClass {
+export class BaseClass {
     constructor() {
         this.browser = null;
         this.context = null;
         this.page = null;
         this.isFirstRun = true;
         this.excelUtility = new ExcellUtility();
-        this.databaseutility= new Databaseutility();
+        this.databaseutility = new Databaseutility();
     }
 
     async initialize() {
@@ -41,15 +41,6 @@ exports.BaseClass= class BaseClass {
         }
     }
 
-   ExcelClass() {
-        return this.excelUtility;
-    }
-
-    DataBaseClass(){
-        return this.databaseutility;
-    }
-
-
     async cleanup() {
         try {
             if (this.context) {
@@ -63,5 +54,3 @@ exports.BaseClass= class BaseClass {
         }
     }
 }
-
-

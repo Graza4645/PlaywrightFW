@@ -1,25 +1,23 @@
-const { test } = require('../ALCS-SAAS-Generic/02testSetup');
-const {BaseClass}= require('../ALCS-SAAS-Generic/01BaseClass.js');
-const { captureRejectionSymbol } = require('events');
-const path=require('../ALCS-SAAS-Generic/06IConstantPath.js')
+import { test } from '../ALCS-SAAS-Generic/02testSetup.js';
+import { BaseClass } from '../ALCS-SAAS-Generic/01BaseClass.js';
+import { PATH_GET } from '../ALCS-SAAS-Generic/06IConstantPath.js';
 
 
-let base=new BaseClass();
+class TestClass extends BaseClass {}
 
+let base = new TestClass();
 
 test('Script-1: Validate Page Title', async () => {
   console.log('Script one pass');
 
-  const value = await base.ExcelClass().getDataFromExcel(path.PATH_GET, "Sheet1", "C2");
+  const value = await base.excelUtility.getDataFromExcel(PATH_GET, "Sheet1", "C2");
   console.log(value);
-  await base.ExcelClass().setDataInExcel(path.PATH_GET, "Sheet1", "C2", "Noushad");
+  await base.excelUtility.setDataInExcel(PATH_GET, "Sheet1", "C2", "Noushad");
 
-  let all = await base.ExcelClass().dataProvider(path.PATH_GET, "Sheet1");
-   Array.isArray(all)
-   console.table(all)
-   await base.DataBaseClass().DBConnection();
- 
+  let all = await base.excelUtility.dataProvider(PATH_GET, "Sheet1");
+  console.table(all);
 
+  await base.databaseutility.DBConnection();
 });
 
 test('Script-2: Check Element Presence', async () => {

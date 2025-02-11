@@ -1,6 +1,6 @@
-const { test } = require('@playwright/test');
-const { BaseClass } = require('./01BaseClass.js');
-const CommonData = require('../UtilsData/CommonData.js');
+import { test } from '@playwright/test';
+import { BaseClass } from './01BaseClass.js';
+import CommonData from '../UtilsData/CommonData.js';
 
 let base;
 
@@ -23,4 +23,4 @@ test.afterAll(async () => {
   await base.cleanup();
 });
 
-module.exports = { test, base };
+export { test, base };
