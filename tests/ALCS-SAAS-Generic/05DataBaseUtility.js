@@ -28,6 +28,7 @@ export class Databaseutility {
             console.error("❌ Error in DB connection:", error.message);
         } finally {
             await client.end();
+            console.log('✅ Database Disconnected successfully!');
         }
     }
 }
