@@ -46,8 +46,7 @@ test.beforeAll(async () => {
   base = new BaseClass();
   await base.initialize();
   const timestamp = new Date().toLocaleString();
-  console.log(`\x1b[32m\x1b[1m✅ Successfully Initialized and Launched Browser\x1b[0m`,`\x1b[34m[${timestamp}]\x1b[0m`
-  );
+  console.log(`\x1b[32m\x1b[1m✅ Successfully Initialized and Launched Browser\x1b[0m`,`\x1b[34m[${timestamp}]\x1b[0m`);
   
 });
 
