@@ -2,7 +2,7 @@
 export default class Basicdetails {
       
      constructor(page){
-        this.basicdetails_page=page;
+        this.page=page;
       //   this.tcs()
      }
 

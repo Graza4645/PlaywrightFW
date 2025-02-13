@@ -1,11 +1,12 @@
 import { PATH_GET } from '../ALCS-SAAS-Generic/06IConstantPath.js';
 import { test, base } from '../ALCS-SAAS-Generic/02testSetup.js';  
 
+
+
 test('Script-1: Validate Page Title', async () => {
-  
-    // await base.eonboarding.commansteps();  
-    await base.eonbbase.index01();
-    await base.eonbbase.eonb.tcs();
+    
+    
+    await base.eonboarding.commonfunction_Page.commansteps();
     
    
 });
