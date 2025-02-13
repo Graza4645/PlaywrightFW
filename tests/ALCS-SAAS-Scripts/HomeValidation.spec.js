@@ -3,7 +3,9 @@ import { test, base } from '../ALCS-SAAS-Generic/02testSetup.js';
 
 test('Script-1: Validate Page Title', async () => {
   
-    await base.eonboarding.commansteps();  
+    // await base.eonboarding.commansteps();  
+    await base.eonbbase.index01();
+    await base.eonbbase.eonb.tcs();
     
    
 });
