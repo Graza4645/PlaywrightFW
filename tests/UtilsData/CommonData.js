@@ -2,15 +2,15 @@
  *  @author MD NOUSHAD ANSARI 
  */
 
-module.exports = {
+module.exports =  {
 
     /**
      *  This information for Application
      */
     
     "Url" : "https://hcm-consumer-ui-qa.teamlease.com",
-    "username" : "Ugra",
-    "password" : "Ugra",
+    "username" : "testing",
+    "password" : "testing",
 
 
 

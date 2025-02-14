@@ -1,11 +1,11 @@
-import EonBoardingTestData  from '../../../ALCS-SAAS-Test-Data/EonBoardingTestData.js';
+// import EonBoardingTestData  from '../../../ALCS-SAAS-Test-Data/EonBoardingTestData.js';
 import { test } from '@playwright/test';
 
 export default class CommonFunction {
 
   constructor(page,data) {
     this.page = page;  
-    this.data=EonBoardingTestData;
+    this.data=data;
   }
 
   #expandSidebar() {
@@ -48,16 +48,12 @@ export default class CommonFunction {
 
 
   async commansteps() {
-    
-    try {
+  
       await test.step('Expand Side Bar', async () => {
         await this.#expandSidebar().waitFor({ state: 'visible' });  
         await this.#expandSidebar().click(); 
       });
-    } catch (error) {
-      console.error("❌ Error in expanding sidebar:", error.message);
-      throw error;
-    }
+ 
 
     try{
       await test.step('Select hiring ' , async ()=>{

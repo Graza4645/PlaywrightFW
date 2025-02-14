@@ -36,7 +36,9 @@ export default class LoginPage {
   }
 
   async logout() {
+    await this.page.waitForTimeout(1000);
     await this.profileIcon.click();
+    await this.page.waitForTimeout(1000);
     await this.signOutButton.click();
     await this.page.waitForTimeout(500);
   }

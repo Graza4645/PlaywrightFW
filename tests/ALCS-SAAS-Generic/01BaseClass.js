@@ -3,18 +3,17 @@ import CommonData from '../UtilsData/CommonData.js';
 import LoginPage from '../ALCS-SAAS-PageObjectModel/LoginPage.js';
 import { ExcellUtility } from '../ALCS-SAAS-Generic/04ExcelUtility.js';
 import { Databaseutility } from '../ALCS-SAAS-Generic/05DataBaseUtility.js';
-import EonBoarding from '../ALCS-SAAS-PageObjectModel/EonBoardingModule/index.js';
-import EonB from '../ALCS-SAAS-PageObjectModel/EonBoardingModule/index.js';
+
 
 export class BaseClass {
-    constructor(data) {
+    constructor() {
         this.browser = null;
         this.context = null;
         this.page = null;
         this.isFirstRun = true;
         this.excelUtility = new ExcellUtility();
         this.databaseutility = new Databaseutility();
-        this.data=data;
+        
     
     }
 
@@ -26,9 +25,6 @@ export class BaseClass {
                 this.page = await this.context.newPage();
                 await this.page.setViewportSize({ width: 1900, height: 1100 });
                 this.loginPage = new LoginPage(this.page);
-                this.eonboarding = new EonBoarding(this.page,this.data); 
-        
-
                
             }
             return this.page;
