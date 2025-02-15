@@ -12,7 +12,7 @@ module.exports = [
  * mandatory field
  */
   
-  "MANDATORY" : "YES",
+  "MANDATORY" : "NO",
 
   /**
    *  Common or Basic Data
@@ -106,7 +106,7 @@ module.exports = [
    "REQUIREMENT_ID"       :  "SDE"  ,   
    "SALARY_PER_MONTH"     :  "75000",
    "COMPARE_MIN_WAGE"     :  "Gross",
-   "CAP"                  :  "NO",
+   "CAP"                  :  "YES",
 
 
   /**

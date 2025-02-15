@@ -24,7 +24,7 @@ export default class PersonalDetails {
    * @param {string} fieldname 
    * @returns Locator for field validation messages
    */
-  #fieldValidation(fieldname) {
+  #fieldValidationxpath(fieldname) {
     return this.page.locator(`//label[contains(@class,'mantine-InputWrapper-label') and contains(.,'${fieldname}')]/following-sibling::p`);
   }
 
@@ -32,9 +32,9 @@ export default class PersonalDetails {
    * Function to check if an error message is displayed for a field
    * @param {string} fieldname 
    */
-  async fieldValidation(fieldname) {
+  async fieldValidationmethod(fieldname) {
     try {
-      const locator = this.#fieldValidation(fieldname);
+      const locator = this.#fieldValidationxpath(fieldname);
       const errorValidationCount = await locator.count();
 
       if (errorValidationCount > 0) {
@@ -85,7 +85,7 @@ export default class PersonalDetails {
         const MName = await mandatoryField.textContent();
         if (MName?.includes('*') || this.data.MANDATORY === 'NO') {
           await this.#adharname().fill(`${this.data.NAME}`);
-          await this.fieldValidation(MName);
+          await this.fieldValidationmethod(MName);
         }
       });
     } catch (error) {
@@ -104,7 +104,7 @@ export default class PersonalDetails {
         if (MGender?.includes('*') || this.data.MANDATORY === 'NO') {
           await this.#clickgender().click();
           await this.#selectgendervalue().click();
-          await this.fieldValidation(MGender);
+          await this.fieldValidationmethod(MGender);
         }
       });
     } catch (error) {
@@ -136,7 +136,7 @@ export default class PersonalDetails {
          await this.page.getByText(`${this.data.EXPECTED_MONTH}`, { exact: true }).click();
          await this.page.getByText(`${this.data.EXPECTED_DATE}`, { exact: true }).click();
          
-          await this.fieldValidation(MDOB);
+          await this.fieldValidationmethod(MDOB);
         }
       });
     } catch (error) {
@@ -180,7 +180,7 @@ export default class PersonalDetails {
       if (await crossMark.count() > 0) { 
         const checkClass = await crossMark.getAttribute('class') || '';
         if (checkClass.includes('tabler-icon-x')) {
-          console.log(`\x1b[34m================================>>  \x1b[0m`,`\x1b[31m🔴 Personal Details is NOT Completed \x1b[0m`,`\x1b[34m <<================================\x1b[0m`);
+          console.log(`\x1b[34m================================>>  \x1b[0m`,`\x1b[31m🔴 Personal Details is Not Completed \x1b[0m`,`\x1b[34m <<================================\x1b[0m`);
         }
       } 
     } catch (error) {

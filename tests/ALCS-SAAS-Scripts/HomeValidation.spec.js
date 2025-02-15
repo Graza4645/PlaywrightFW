@@ -9,6 +9,10 @@ EonBoardingTestData.forEach((data) => {
           await eonboarding.commonfunction_Page.commansteps(); 
           await eonboarding.personaldetails.PersonalDetails(); 
           await eonboarding.kycinformation.KYCInformation();
+          await eonboarding.contactinformation.ContactInformation();
+          await eonboarding.employmentdetails.employmentDetails();
+          await eonboarding.salarynformation.Salaryinformation();
+          await eonboarding.miscellaneous.MiscellaneousM();
 
 
 
