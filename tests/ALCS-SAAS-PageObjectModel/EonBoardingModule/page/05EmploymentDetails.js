@@ -122,6 +122,11 @@ return this.page.locator("//label[text()='Job Category']/following-sibling::div/
 #reportingmanagername(){
     return this.page.locator("//label[text()='Reporting Manager Name']/following-sibling::div/input")
 }
+
+#next(){
+    return this.page.getByText('Next');
+   }
+
  //JobCategory                     
 async employmentDetails() {
     try {
@@ -327,8 +332,13 @@ async employmentDetails() {
       }
   
   
-
-    await this.page.getByText('Next').click();
+    
+      try{
+        await this.#next().click();
+       }catch(error){
+        console.error('❌ Error Next Button in Employeement Details  ;', error.message);
+        throw error;
+       }
 
     try {
         const checkMark = this.#signup01();

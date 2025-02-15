@@ -5,6 +5,7 @@ import ContanctInformation from "./page/04ContanctInformation";
 import EmploymentDetails from "./page/05EmploymentDetails";
 import SalaryInformation from "./page/06SalaryInformation";
 import Miscellaneous from "./page/07Miscellaneous";
+import EonValidation from "./page/08Validation";
 
 export default class EonBoarding {
 
@@ -16,6 +17,7 @@ export default class EonBoarding {
         this.employmentdetails = new EmploymentDetails(page,data)
         this.salarynformation = new SalaryInformation(page,data);
         this.miscellaneous   =  new Miscellaneous(page,data);
+        this.eonvalidation  = new EonValidation(page,data);
     }
        
    

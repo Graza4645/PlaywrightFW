@@ -13,6 +13,7 @@ EonBoardingTestData.forEach((data) => {
           await eonboarding.employmentdetails.employmentDetails();
           await eonboarding.salarynformation.Salaryinformation();
           await eonboarding.miscellaneous.MiscellaneousM();
+          await eonboarding.eonvalidation.validationpart();
 
 
 

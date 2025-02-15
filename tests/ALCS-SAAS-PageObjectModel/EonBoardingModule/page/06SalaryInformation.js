@@ -58,7 +58,9 @@ export default class  SalaryInformation{
     return this.page.locator(`//label[contains(@class,'mantine-InputWrapper-label') and contains(.,'${value}')]`);
   }
 
-
+  #next(){
+   return this.page.getByText('Next');
+  }
 
   #clickondesignation(){
    return this.page.locator("//label[text()='Designation']/following-sibling::div/button")
@@ -206,7 +208,13 @@ async Salaryinformation() {
         throw error;
       }
       
-    await this.page.getByText('Next').click();
+       try{
+        await this.#next().click();
+       }catch(error){
+        console.error('❌ Error Next Button in Salary Information ;', error.message);
+        throw error;
+       }
+        
 
     try {
         const checkMark = this.#signup01();

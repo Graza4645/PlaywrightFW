@@ -86,6 +86,11 @@ export default class KYCInformation {
   }
 
 
+  #next(){
+    return this.page.getByText('Next');
+   }
+
+
 async KYCInformation() {
     try {
         await test.step("Fill Aadhaar Number", async () => {
@@ -160,7 +165,13 @@ async KYCInformation() {
 
 
 
-    await this.page.getByText('Next').click();
+   
+    try{
+      await this.#next().click();
+     }catch(error){
+      console.error('❌ Error Next Button in KYC Information   ;', error.message);
+      throw error;
+     }
 
     try {
         const checkMark = this.#signup01();

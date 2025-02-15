@@ -73,7 +73,10 @@ export default class ContanctInformation {
    return  this.page.locator("//label[text()='Emergency No']/following-sibling::div/input");
   }
 
-
+  #next(){
+    return this.page.getByText('Next');
+   }
+   
 async ContactInformation() {
     try {
         await test.step("Fill Mobile Number", async () => {
@@ -127,7 +130,13 @@ async ContactInformation() {
       }
 
 
-    await this.page.getByText('Next').click();
+    
+      try{
+        await this.#next().click();
+       }catch(error){
+        console.error('❌ Error Next Button in Contact Details   ;', error.message);
+        throw error;
+       }
 
     try {
         const checkMark = this.#signup01();

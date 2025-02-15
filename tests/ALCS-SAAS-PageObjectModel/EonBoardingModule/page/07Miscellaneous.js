@@ -75,7 +75,9 @@ export default class  Miscellaneous{
     return this.page.locator("//input[@placeholder='Enter Emails']");
 }
  
-
+#finish(){
+    return this.page.getByText('Finish', {exact : true});
+   }
 
 async MiscellaneousM() {
     try {
@@ -134,19 +136,13 @@ async MiscellaneousM() {
       }
       
 
+      try{
+        await this.#finish().click();
+       }catch(error){
+        console.error('❌ Error Finish Button in Miscellaneous ;', error.message);
+        throw error;
+       }
 
-
-
-
-
- 
-     
-
-
-
-      const finishButton = await this.page.getByText('Finish', {exact : true});
-      await finishButton.click();
-      await this.page.waitForTimeout(2000);
 
     try {
         const checkMark = this.#signup01();

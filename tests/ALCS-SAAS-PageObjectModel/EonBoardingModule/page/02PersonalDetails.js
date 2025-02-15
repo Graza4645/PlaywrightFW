@@ -75,6 +75,13 @@ export default class PersonalDetails {
    return this.page.locator("//input[@type='checkbox']/parent::label");
   }
 
+
+  #next(){
+    return this.page.getByText('Next');
+   }
+
+
+
   async PersonalDetails() {
     try {
       await test.step('Fill Associate Name as per Aadhar ID', async () => {
@@ -159,7 +166,13 @@ export default class PersonalDetails {
       throw error;
     }
 
-    await this.page.getByText('Next').click();
+
+     try{
+      await this.#next().click();
+     }catch(error){
+      console.error('❌ Error Next Button in Personal Details    ;', error.message);
+      throw error;
+     }
 
    
     try {
