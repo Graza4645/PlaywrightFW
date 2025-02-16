@@ -32,15 +32,14 @@ export default class LoginPage {
     await this.continueButton.click();
     await this.passwordField.fill(password);
     await this.loginButton.click();
-    await this.page.waitForTimeout(500);
   }
 
   async logout() {
-    await this.page.waitForTimeout(1000);
+    // await this.page.waitForTimeout(500);
     await this.profileIcon.click();
-    await this.page.waitForTimeout(1000);
+    // await this.page.waitForTimeout(500);
     await this.signOutButton.click();
-    await this.page.waitForTimeout(500);
+    // await this.page.waitForTimeout(500);
   }
 
 

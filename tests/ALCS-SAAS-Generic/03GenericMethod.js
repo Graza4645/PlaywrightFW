@@ -24,7 +24,14 @@ exports.GenericMethod =
             await this.page.setViewportSize({ width: Width, height: Height });
         }
 
-
+        
+       async createfolder(foldername){
+        const downloadPath = path.resolve(__dirname, `../${foldername}`);   
+        if (!fs.existsSync(downloadPath)) {
+          fs.mkdirSync(downloadPath);
+        }
+        return downloadPath;
+       }
 
         
 }

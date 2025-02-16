@@ -6,6 +6,7 @@ export default class CommonFunction {
   constructor(page,data) {
     this.page = page;  
     this.data=data;
+    
   }
 
   #expandSidebar() {
@@ -30,7 +31,7 @@ export default class CommonFunction {
 
 
   #selectclient(){
-    return this.page.locator("//span[contains(@class,'InputPlaceholder-placeholder') and contains(.,'Select Client')]");
+    return this.page.locator("//span[contains(@class,'InputPlaceholder-placeholder') and contains(.,'Select Client')]")
   }
 
   #selectclientvalue(){
@@ -76,10 +77,14 @@ export default class CommonFunction {
     throw error;
    }
 
+
+
+
    try{
     await test.step('Select Mode ' , async ()=>{
        await this.#selectmode().waitFor({state: 'visible'});
        await this.#selectmode().click();
+      
     });
    } catch (error) {
     console.error("❌ Error in Select Mode :", error.message);

@@ -136,12 +136,22 @@ async MiscellaneousM() {
       }
       
 
-      try{
-        await this.#finish().click();
-       }catch(error){
-        console.error('❌ Error Finish Button in Miscellaneous ;', error.message);
-        throw error;
-       }
+    
+      const finishButton = await this.#finish();
+
+      if (await finishButton.isEnabled()) {
+          try {
+              await finishButton.click();
+          } catch (error) {
+              console.error('❌ Error Finish Button in Miscellaneous:', error.message);
+              throw error;
+          }
+      } else {
+          console.log(`\x1b[34m================================>>  \x1b[0m`, `\x1b[32m✅ Not Generated \x1b[0m`, `\x1b[34m <<================================\x1b[0m`);
+          
+        }
+      
+       
 
 
     try {

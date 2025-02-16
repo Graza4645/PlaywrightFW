@@ -115,10 +115,10 @@ async KYCInformation() {
             await mandatoryField.waitFor({ state: "visible" });
 
             const panLabel = await mandatoryField.textContent();
-            if (panLabel?.includes("*") || this.data.MANDATORY === "NO") {
+           if (panLabel?.includes("*") || this.data.MANDATORY === "NO") {
                 await this.#pannumber().fill(`${this.data.PAN_NUMBER}`);
                 await this.fieldValidationmethod(panLabel);
-            }
+           }
         });
     } catch (error) {
         console.error("❌ Error in 'Fill PAN Number':", error.message);

@@ -3,6 +3,7 @@ import CommonData from '../UtilsData/CommonData.js';
 import LoginPage from '../ALCS-SAAS-PageObjectModel/LoginPage.js';
 import { ExcellUtility } from '../ALCS-SAAS-Generic/04ExcelUtility.js';
 import { Databaseutility } from '../ALCS-SAAS-Generic/05DataBaseUtility.js';
+import GenericMethod from '../ALCS-SAAS-Generic/03GenericMethod.js'
 
 
 export class BaseClass {
@@ -25,6 +26,7 @@ export class BaseClass {
                 this.page = await this.context.newPage();
                 await this.page.setViewportSize({ width: 1900, height: 1100 });
                 this.loginPage = new LoginPage(this.page);
+                this.method = new GenericMethod(this.page);
                
             }
             return this.page;

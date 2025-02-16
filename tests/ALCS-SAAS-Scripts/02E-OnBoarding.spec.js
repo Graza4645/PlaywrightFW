@@ -16,9 +16,6 @@ EonBoardingTestData.forEach((data) => {
           await eonboarding.eonvalidation.validationpart();
 
 
-
-    
-
     });
 });
 

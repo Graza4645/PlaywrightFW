@@ -38,6 +38,7 @@ export default class EonValidation {
 
     async validationpart(){
 
+        if(this.data.ACTIVE == 'YES'){
         try{
             await test.step('Validation of Active DashBoard  OnBoarding Status ' , async()=>{
                 if(this.data.MANDATORY == 'YES' && parseInt(this.data.SALARY_PER_MONTH) < 15000){
@@ -64,23 +65,30 @@ export default class EonValidation {
             console.error('❌ Error in Active Validation ', error.message);
             throw error;
         }
+    }
 
+
+
+
+    
+
+        if(this.data.MANDATORY == 'YES' && parseInt(this.data.SALARY_PER_MONTH) > 15000){
       try{
            await test.step('Validation for if salary monthly is greater than 15k pan is mandatory ' ,async() =>{
-            if(this.data.MANDATORY == 'YES' && parseInt(this.data.SALARY_PER_MONTH) > 15000){
+            
                         const finishButton = await this.page.getByText('Finish', {exact : true});
                         await finishButton.click();    
                         const validation= await this.#pancardvalidation()//.textContent();
                         await validation.waitFor({ state : "visible"});
                         const panerrormessage = await validation.textContent();
                         console.log("🔴 ",panerrormessage)
-                         
-                       }
+                                
            })
       }catch(error){
         console.error('❌ Error in PanCard Validation ', error.message)
         throw error
       }
+    }
 
       if (this.data.CANCELLED === 'YES') {
         try {
@@ -110,37 +118,5 @@ export default class EonValidation {
     
     
      
-
-        //  try{
-
-        //     if(this.data.MANDATORY == 'YES' && parseInt(this.data.SALARY_PER_MONTH) > 15000){
-               
-        //         const finishButton = await this.page.getByText('Finish', {exact : true});
-        //         await finishButton.click();    
-        //         const validation= await this.page.locator("//div[@class='m_3d733a3a mantine-Notification-description']").textContent();
-        //         console.log("🔴 ",validation)
-                 
-        //        }else{
-        //         const finishButton = await this.page.getByText('Finish', {exact : true});
-        //         await finishButton.click();
-        //         const messages=await this.page.locator(`//tr[contains(@class,'CustomTable-module__table-row-wrapper') and contains(.,'${this.data.NAME}')]/child::td[9]`).textContent();
-                   
-        //         if (messages == 'DWS Data Pending') {
-        //               const timestamp = new Date().toLocaleString();
-        //               console.log(`\x1b[32m\x1b[1m✅ Successfully Created But Status is --> ${messages}\x1b[0m`,`\x1b[34m[${timestamp}]\x1b[0m`);
-                   
-        //             const ecode=await this.page.locator(`//tr[contains(@class,'CustomTable-module__table-row-wrapper') and contains(.,'${this.data.NAME}')]/child::td[3]`).textContent();
-        //             const Employee_Name=await this.page.locator(`//tr[contains(@class,'CustomTable-module__table-row-wrapper') and contains(.,'${this.data.NAME}')]/child::td[4]`).textContent();
-        //             const Employee_Emial=await this.page.locator(`//tr[contains(@class,'CustomTable-module__table-row-wrapper') and contains(.,'${this.data.NAME}')]/child::td[5]`).textContent();
-        //             console.log(Employee_Name,'   ', Employee_Emial)
-        //             }  
-        //     }
-           
-
-
-        //  }catch(error){
-        //     console.error('❌ Error in Active Validation ', error.message)
-        //     throw error;
-        //  }
     }
 }
