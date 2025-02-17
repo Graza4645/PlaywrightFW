@@ -26,7 +26,7 @@ export default class BaseClass {
                 this.page = await this.context.newPage();
                 await this.page.setViewportSize({ width: 1900, height: 1100 });
                 this.loginPage = new LoginPage(this.page);
-                // this.method = new GenericMethod(this.page);
+                this.method = new GenericMethod(this.page);
                
             }
             return this.page;

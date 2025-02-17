@@ -1,5 +1,5 @@
 import { test } from '@playwright/test'
-import GenericMethod from '../../../ALCS-SAAS-Generic/03GenericMethod.js'
+import { base} from '../../../ALCS-SAAS-Generic/02testSetup.js'; 
 
 export default class DownloadEditMOl {
     constructor(page) {
@@ -45,7 +45,7 @@ export default class DownloadEditMOl {
        return this.page.locator("(//img[@src='https://alcs-saas-ui-offerletter-qa.teamlease.com/images/download.svg'])[3]");
     }
     async downloadeditMOl() {
-        const method = new GenericMethod(this.page);
+        
         
     try{
         await test.step('Expand Side Bar', async () => {
@@ -124,7 +124,7 @@ export default class DownloadEditMOl {
        
         try{
             await test.step('Createing New Folder', async()=>{
-              this.path =await method.createfolder('ExcelSheetEditMOLDownload');
+              this.path =await base.method.createfolder('ExcelSheetEditMOLDownload');
               console.log(`\x1b[34m================================>>  \x1b[0m`, `\x1b[32m✅ Successfully New folder is Created  \x1b[0m `,`\x1b[34m <<================================\x1b[0m`);
 
             })
@@ -159,7 +159,7 @@ export default class DownloadEditMOl {
         
         try{
             await test.step('Delete the creted folder ', async() =>{
-                await method.deletefolder(this.path);
+               // await method.deletefolder(this.path);
                 console.log(`\x1b[34m================================>>  \x1b[0m`, `\x1b[32m✅ Successfully Deleted Creted folder \x1b[0m `,`\x1b[34m <<================================\x1b[0m`);
 
             })
@@ -168,6 +168,7 @@ export default class DownloadEditMOl {
             throw error
         }
          
+        
         
     }
 }

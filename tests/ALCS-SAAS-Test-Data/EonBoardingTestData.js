@@ -273,7 +273,7 @@ module.exports = [
    */
 
   "SALUTATION"          : "DR",
-  "NAME"                : "12",// faker.name.lastName().replace(/[^a-zA-Z]/g, '').trim(),    // Name must contain only alphabets
+  "NAME"                : faker.name.lastName().replace(/[^a-zA-Z]/g, '').trim(),    // Name must contain only alphabets
   "GENDER"              : "Female",
   "CLIENT_CODE"         : "T23262",
   "EXPECTED_YEAR"       : "2000",
@@ -646,7 +646,7 @@ module.exports = [
   "NAME"                :  faker.name.lastName().replace(/[^a-zA-Z]/g, '').trim(),    // Name must contain only alphabets
   "GENDER"              : "Female",
   "CLIENT_CODE"         : "T23262",
-  "EXPECTED_YEAR"       : "2010",
+  "EXPECTED_YEAR"       : "2000",
   "EXPECTED_MONTH"      : "May",
   "EXPECTED_DATE"       : "12",
   "FATHER_HUSBAND_NAME" : "IRFAN KHAN",                                               // Name must contain only alphabets
