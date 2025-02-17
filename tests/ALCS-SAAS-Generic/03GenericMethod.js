@@ -1,7 +1,9 @@
 import { expect,test } from "@playwright/test";
+const path = require("path");
+import fs from 'fs';
 
-exports.GenericMethod = 
-     class GenericMethod {
+
+export default class GenericMethod {
     
         constructor(page){
              this.page=page;
@@ -24,14 +26,35 @@ exports.GenericMethod =
             await this.page.setViewportSize({ width: Width, height: Height });
         }
 
-        
-       async createfolder(foldername){
-        const downloadPath = path.resolve(__dirname, `../${foldername}`);   
-        if (!fs.existsSync(downloadPath)) {
-          fs.mkdirSync(downloadPath);
+        async check(){
+            console.log("generic method ");
         }
-        return downloadPath;
-       }
-
+        
+      
+       async createfolder(foldername){
+        try{
+            const downloadPath = path.resolve(__dirname, `../${foldername}`);   
+            if (!fs.existsSync(downloadPath)) {
+              fs.mkdirSync(downloadPath);
+            }
+            this.page.on('download', (download) => {
+                download.saveAs(path.join(downloadPath, download.suggestedFilename()));
+              });
+            return downloadPath;
+           }
+        catch(error){
+           console.error('❌ Sorry Enabled to Create Folder')
+        }
+    }
+     
+   
+        async deletefolder(downloadPath){
+            try{
+                fs.rmSync(downloadPath, { recursive: true, force: true }); 
+            }catch(error){
+                console.error('❌  Sorry enabled to delete folder ')
+            }
+            
+        }
         
 }

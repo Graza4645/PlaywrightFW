@@ -49,11 +49,16 @@ export default class CommonFunction {
 
 
   async commansteps() {
-  
+    
+    try{
       await test.step('Expand Side Bar', async () => {
         await this.#expandSidebar().waitFor({ state: 'visible' });  
         await this.#expandSidebar().click(); 
       });
+    } catch (error) {
+      console.error("❌ Error in Expand side bar :", error.message);
+      throw error;
+     }
  
 
     try{

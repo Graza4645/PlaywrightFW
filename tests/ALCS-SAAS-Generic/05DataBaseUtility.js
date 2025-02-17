@@ -1,7 +1,7 @@
 import { Client } from 'pg';
 import CommonData from '../UtilsData/CommonData.js';
 
-export class Databaseutility {
+export default class Databaseutility {
     constructor() {
         this.dbConfig = {
             host: CommonData.DBUrl,

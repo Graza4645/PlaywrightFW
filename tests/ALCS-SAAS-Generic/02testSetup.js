@@ -1,5 +1,5 @@
 import { test } from '@playwright/test';
-import { BaseClass } from './01BaseClass.js';
+import  BaseClass  from './01BaseClass.js';
 import CommonData from '../UtilsData/CommonData.js';
 
 let base;
