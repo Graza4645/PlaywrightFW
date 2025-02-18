@@ -70,7 +70,7 @@ export default class JobInformation{
                const breakup = this.#selectjoblocationvalue();
                await breakup.waitFor( {state : "visible"} );
                await breakup.click();
-            // await this.page.locator(`//span[contains(text(),'Unskilled')]`).click();
+            
         });
     }catch(error){
         console.error('❌ Error in Select Job Location Value', error.message)

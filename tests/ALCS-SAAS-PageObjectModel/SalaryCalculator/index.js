@@ -3,6 +3,8 @@ import CoreDetails from "./page/01CoreDetails";
 import JobInformation from "./page/02JobInformation";
 import SalaryDetails from "./page/03SalaryDetails";
 import ExemptionsAndApplicability from "./page/04ExemptionsandApplicability";
+import ValidationPart from "./page/05ValidationPart";
+
 
 export default class SalaryCalculator{
     constructor(page, BasicData, states){
@@ -11,5 +13,7 @@ export default class SalaryCalculator{
         this.jobinformation = new JobInformation(page, BasicData, states);
         this.salarydetails = new SalaryDetails(page, BasicData, states);
         this.exemptionsandapplicability = new ExemptionsAndApplicability(page, BasicData, states);
+        this.validationpart = new ValidationPart(page, BasicData, states);
+        
     }
 }

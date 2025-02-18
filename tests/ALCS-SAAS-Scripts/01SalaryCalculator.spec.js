@@ -10,6 +10,9 @@ states.forEach((states) => {
           await salcal.commonfunction.commansteps();
           await salcal.coredetails.coredetails();
           await salcal.jobinformation.jobinformation();
+          await salcal.salarydetails.salarydetails();
+          await salcal.exemptionsandapplicability.exemptionsandApplicability();
+          await salcal.validationpart.validation01();
     });
 });
 
