@@ -79,8 +79,8 @@ module.exports = [
   "JOB_CATEGORY"     : "School Pass-Outs",
   "CONTRACT_FROMDOJ" : {
   "EXPECTEDYEAR"     :  "2025",
-  "EXPECTEDMONTH"    :  "Jan",
-  "EXPECTEDDATE"     :  "29"
+  "EXPECTEDMONTH"    :  "Feb",
+  "EXPECTEDDATE"     :  "15"
    },
   "CONTRACT_END_DATE": {
   "EXPECTEDYEAR"     :  "2025",
@@ -202,8 +202,8 @@ module.exports = [
   "JOB_CATEGORY"     : "School Pass-Outs",
   "CONTRACT_FROMDOJ" : {
   "EXPECTEDYEAR"     :  "2025",
-  "EXPECTEDMONTH"    :  "Jan",
-  "EXPECTEDDATE"     :  "29"
+  "EXPECTEDMONTH"    :  "Feb",
+  "EXPECTEDDATE"     :  "15"
    },
   "CONTRACT_END_DATE": {
   "EXPECTEDYEAR"     :  "2025",
@@ -324,8 +324,8 @@ module.exports = [
   "JOB_CATEGORY"     : "School Pass-Outs",
   "CONTRACT_FROMDOJ" : {
   "EXPECTEDYEAR"     :  "2025",
-  "EXPECTEDMONTH"    :  "Jan",
-  "EXPECTEDDATE"     :  "29"
+  "EXPECTEDMONTH"    :  "Feb",
+  "EXPECTEDDATE"     :  "15"
    },
   "CONTRACT_END_DATE": {
   "EXPECTEDYEAR"     :  "2025",
@@ -449,8 +449,8 @@ module.exports = [
   "JOB_CATEGORY"     : "School Pass-Outs",
   "CONTRACT_FROMDOJ" : {
   "EXPECTEDYEAR"     :  "2025",
-  "EXPECTEDMONTH"    :  "Jan",
-  "EXPECTEDDATE"     :  "29"
+  "EXPECTEDMONTH"    :  "Feb",
+  "EXPECTEDDATE"     :  "15"
    },
   "CONTRACT_END_DATE": {
   "EXPECTEDYEAR"     :  "2025",
@@ -572,8 +572,8 @@ module.exports = [
   "JOB_CATEGORY"     : "School Pass-Outs",
   "CONTRACT_FROMDOJ" : {
   "EXPECTEDYEAR"     :  "2025",
-  "EXPECTEDMONTH"    :  "Jan",
-  "EXPECTEDDATE"     :  "29"
+  "EXPECTEDMONTH"    :  "Feb",
+  "EXPECTEDDATE"     :  "15"
    },
   "CONTRACT_END_DATE": {
   "EXPECTEDYEAR"     :  "2025",
@@ -694,8 +694,8 @@ module.exports = [
   "JOB_CATEGORY"     : "School Pass-Outs",
   "CONTRACT_FROMDOJ" : {
   "EXPECTEDYEAR"     :  "2025",
-  "EXPECTEDMONTH"    :  "Jan",
-  "EXPECTEDDATE"     :  "29"
+  "EXPECTEDMONTH"    :  "Feb",
+  "EXPECTEDDATE"     :  "15"
    },
   "CONTRACT_END_DATE": {
   "EXPECTEDYEAR"     :  "2025",

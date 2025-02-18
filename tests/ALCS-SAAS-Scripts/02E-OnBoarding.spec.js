@@ -1,7 +1,7 @@
 import { PATH_GET } from '../ALCS-SAAS-Generic/06IConstantPath.js';
 import { test ,base} from '../ALCS-SAAS-Generic/02testSetup.js';  
-import EonBoardingTestData from '../ALCS-SAAS-Test-Data/EonBoardingTestData.js';
-import EonBoarding from '../ALCS-SAAS-PageObjectModel/EonBoardingModule/index.js';
+import EonBoardingTestData from '../ALCS-SAAS-Test-Data/E-OnBoarding/EonBoardingTestData.js';
+import EonBoarding from '../ALCS-SAAS-PageObjectModel/EonBoardingSingle/index.js'
 
 EonBoardingTestData.forEach((data) => {
     test(`${data.Sceanario}`, async () => {
