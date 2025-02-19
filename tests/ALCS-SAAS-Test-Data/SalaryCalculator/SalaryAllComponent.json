@@ -1,14 +1,14 @@
-export const salaryData = {
+{
   "Basic": "15001",
   "HRA": "3000",
-  "Works Allowance": "52777",
+  "Works Allowance": "52779",
   "Statutory Bonus": "1083",
-  "GROSS": "71861",
+  "GROSS": "71863",
   "Employer PF": "1800",
   "Employer ESIC": "621",
   "Gratuity": "721",
-  "CTC": "75003",
+  "CTC": "75005",
   "Employee PF": "1800",
   "Employee ESIC": "144",
-  "NETPAY": "69917"
-};
+  "NETPAY": "69919"
+}

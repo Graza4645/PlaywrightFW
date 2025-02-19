@@ -1,6 +1,8 @@
 import { expect,test } from "@playwright/test";
 const path = require("path");
 import fs from 'fs';
+import { SALARYALLCOMPONENT_PATH } from "./06IConstantPath";
+import { active } from "appium-uiautomator2-driver/build/lib/commands/element";
 
 
 export default class GenericMethod {
@@ -9,6 +11,9 @@ export default class GenericMethod {
              this.page=page;
         }
 
+        async check(){
+            console.log("yes i am hera in method part")
+        }
         async waitfortimeout(time){
             await this.page.waitForTimeout(time);
         }
@@ -26,9 +31,7 @@ export default class GenericMethod {
             await this.page.setViewportSize({ width: Width, height: Height });
         }
 
-        async check(){
-            console.log("generic method ");
-        }
+      
         
       
        async createfolder(foldername){
@@ -55,6 +58,29 @@ export default class GenericMethod {
                 console.error('❌  Sorry enabled to delete folder ')
             }
             
+        }
+
+        async writefsedata(keys,values){
+            console.log("hello write value")
+            try{
+                const salaryData = {};
+                for (let i = 0; i < keys.length; i++) {
+                    salaryData[keys[i].trim()] = values[i].trim();
+                }
+                const jsContent = JSON.stringify(salaryData, null, 2);
+                fs.writeFileSync(SALARYALLCOMPONENT_PATH, jsContent, 'utf8');
+            }catch(error){
+                console.error('❌  Sorry enabled to write fs data in  salarydata object ')
+            }
+        }
+
+        async readfsdata(){
+            try{
+                return JSON.parse(fs.readFileSync(SALARYALLCOMPONENT_PATH, 'utf8'));
+            }catch(error){
+                console.error('❌  Sorry enabled to read fs data ,', error.message)
+            }
+           
         }
         
 }
