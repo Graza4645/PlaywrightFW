@@ -1,12 +1,13 @@
 const XLSX = require("xlsx");
 const path = require("path");
+const fs = require('fs');
 
 /**
  *   @author MD NOUSHAD ANSARI
  */
 
-exports.ExcellUtility=
-     class ExcellUtility {
+
+ export default class ExcellUtility {
     constructor() {}
 
 

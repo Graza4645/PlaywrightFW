@@ -1,11 +1,12 @@
 import { chromium } from 'playwright';
 import CommonData from '../UtilsData/CommonData.js';
 import LoginPage from '../ALCS-SAAS-PageObjectModel/LoginPage.js';
-import { ExcellUtility } from '../ALCS-SAAS-Generic/04ExcelUtility.js';
-import { Databaseutility } from '../ALCS-SAAS-Generic/05DataBaseUtility.js';
-import EonBoarding from '../ALCS-SAAS-PageObjectModel/EonboardingPOM.js';
+import  ExcellUtility  from '../ALCS-SAAS-Generic/04ExcelUtility.js';
+import  Databaseutility  from '../ALCS-SAAS-Generic/05DataBaseUtility.js';
+import GenericMethod from '../ALCS-SAAS-Generic/03GenericMethod.js'
 
-export class BaseClass {
+
+export default class BaseClass {
     constructor() {
         this.browser = null;
         this.context = null;
@@ -13,6 +14,7 @@ export class BaseClass {
         this.isFirstRun = true;
         this.excelUtility = new ExcellUtility();
         this.databaseutility = new Databaseutility();
+        
     
     }
 
@@ -24,7 +26,7 @@ export class BaseClass {
                 this.page = await this.context.newPage();
                 await this.page.setViewportSize({ width: 1900, height: 1100 });
                 this.loginPage = new LoginPage(this.page);
-                this.eonboarding = new EonBoarding(this.page); 
+                this.method = new GenericMethod(this.page);
                
             }
             return this.page;
