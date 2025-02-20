@@ -2,11 +2,13 @@ import {test,base} from '../../../ALCS-SAAS-Generic/02testSetup.js'
 
 export default class SalaryDetails{
 
-    constructor(page, BasicData, states){
-        this.page = page;
-        this.data = BasicData;
-        this.states = states;
-    }
+ 
+    constructor(page, BasicData, state) {
+        this.page = page;  
+        this.data=BasicData;
+        this.state=state;
+        
+      }
 
     #clickonsalarytype(){
         return this.page.locator("//div[contains(@class,'mantine-InputWrapper-root mantine-Select-root') and contains(.,'Salary Type')]/descendant::input[@aria-haspopup='listbox']");

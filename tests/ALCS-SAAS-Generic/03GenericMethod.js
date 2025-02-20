@@ -61,7 +61,6 @@ export default class GenericMethod {
         }
 
         async writefsedata(keys,values){
-            console.log("hello write value")
             try{
                 const salaryData = {};
                 for (let i = 0; i < keys.length; i++) {

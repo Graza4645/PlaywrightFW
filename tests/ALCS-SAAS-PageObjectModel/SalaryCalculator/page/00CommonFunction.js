@@ -3,10 +3,10 @@ import { test } from '@playwright/test';
 
 export default class CommonFunction {
 
-  constructor(page, BasicData, states) {
+  constructor(page, BasicData, state) {
     this.page = page;  
     this.data=BasicData;
-    this.states=states;
+    this.state=state;
     
   }
 

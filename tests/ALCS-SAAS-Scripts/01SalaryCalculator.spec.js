@@ -4,9 +4,11 @@ import BasicData from '../ALCS-SAAS-Test-Data/SalaryCalculator/BasicData.js'
 import states from '../ALCS-SAAS-Test-Data/SalaryCalculator/State.js'
 
 
-states.forEach((states) => {
-    test(`hello` , async() =>{
-          const salcal = new SalaryCalculator(base.page, BasicData, states);
+for (const state of states) {
+ 
+    test(`Validation with ${state} state` , async() =>{
+        console.log(state,'---------------------------------------------------')
+          const salcal = new SalaryCalculator(base.page, BasicData, state);
           await salcal.commonfunction.commansteps();
           await salcal.coredetails.coredetails();
           await salcal.jobinformation.jobinformation();
@@ -14,6 +16,6 @@ states.forEach((states) => {
           await salcal.exemptionsandapplicability.exemptionsandApplicability();
           await salcal.validationpart.validation01();
     });
-});
+}
 
 

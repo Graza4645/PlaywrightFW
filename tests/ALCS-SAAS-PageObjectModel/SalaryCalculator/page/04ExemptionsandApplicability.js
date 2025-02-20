@@ -2,11 +2,13 @@ import {test} from '@playwright/test'
 
 export default class ExemptionsAndApplicability{
 
-    constructor(page, BasicData, states){
-        this.page = page;
-        this.data = BasicData;
-        this.states = states;
-    }
+  
+    constructor(page, BasicData, state) {
+        this.page = page;  
+        this.data=BasicData;
+        this.state=state;
+        
+      }
 
     #cap(){
         return this.page.locator("(//div[@data-without-labels='true'])[1]");

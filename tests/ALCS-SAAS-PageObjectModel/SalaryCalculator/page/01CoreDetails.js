@@ -2,11 +2,13 @@ import {test,base} from '../../../ALCS-SAAS-Generic/02testSetup.js'
 
 export default class CoreDetails{
 
-    constructor(page, BasicData, states){
-        this.page = page;
-        this.data = BasicData;
-        this.states = states;
-    }
+  
+    constructor(page, BasicData, state) {
+        this.page = page;  
+        this.data=BasicData;
+        this.state=state;
+        
+      }
 
     #clickonbreakupcode(){
         return this.page.locator("//div[contains(@class,'mantine-InputWrapper-root mantine-Select-root') and contains(.,'Breakup Code')]/descendant::input[@aria-haspopup='listbox']");
@@ -21,7 +23,7 @@ export default class CoreDetails{
     }
 
     #selectstate(){
-        return this.page.locator(`//span[contains(text(),'${this.data.STATE}')]`);
+        return this.page.locator(`//span[contains(text(),'${this.state}')]`);
     }
 
     #clickonindustrytype(){
@@ -102,9 +104,21 @@ export default class CoreDetails{
 
     try{
         await test.step('Select industry type value ', async()=>{
-               const breakup = this.#selectindustrytype();
-               await breakup.waitFor( {state : "visible"} );
-               await breakup.click();
+            const xpath = "(//div[@class='m_38a85659 mantine-Popover-dropdown m_88b62a41 mantine-Select-dropdown'])[4]//descendant::div[@class='m_92253aa5 mantine-Select-option m_390b5f4']";
+
+            // Get the elements matching the XPath
+            const elements = await this.page.locator(xpath);
+          
+            // Extract the text content from all elements
+            const textContents = await elements.allTextContents();
+          
+            // Print the list of text contents
+            console.log(textContents);
+            //    const breakup = this.#selectindustrytype();
+            //    await breakup.waitFor( {state : "visible"} );
+            //    await breakup.click();
+            
+            
         });
     }catch(error){
         console.error('❌ Error in industry type value ', error.message)

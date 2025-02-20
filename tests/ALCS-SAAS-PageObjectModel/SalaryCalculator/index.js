@@ -7,13 +7,13 @@ import ValidationPart from "./page/05ValidationPart";
 
 
 export default class SalaryCalculator{
-    constructor(page, BasicData, states){
-        this.commonfunction = new CommonFunction(page, BasicData, states);
-        this.coredetails = new CoreDetails(page, BasicData, states);
-        this.jobinformation = new JobInformation(page, BasicData, states);
-        this.salarydetails = new SalaryDetails(page, BasicData, states);
-        this.exemptionsandapplicability = new ExemptionsAndApplicability(page, BasicData, states);
-        this.validationpart = new ValidationPart(page, BasicData, states);
+    constructor(page, BasicData, state){
+        this.commonfunction = new CommonFunction(page, BasicData, state);
+        this.coredetails = new CoreDetails(page, BasicData, state);
+        this.jobinformation = new JobInformation(page, BasicData, state);
+        this.salarydetails = new SalaryDetails(page, BasicData, state);
+        this.exemptionsandapplicability = new ExemptionsAndApplicability(page, BasicData, state);
+        this.validationpart = new ValidationPart(page, BasicData, state);
         
     }
 }
