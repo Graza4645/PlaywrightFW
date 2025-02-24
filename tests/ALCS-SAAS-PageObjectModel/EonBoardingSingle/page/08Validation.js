@@ -73,7 +73,7 @@ export default class EonValidation {
     
 
         if(this.data.MANDATORY == 'YES' && parseInt(this.data.SALARY_PER_MONTH) > 15000){
-      try{
+         try{
            await test.step('Validation for if salary monthly is greater than 15k pan is mandatory ' ,async() =>{
             
                         const finishButton = await this.page.getByText('Finish', {exact : true});

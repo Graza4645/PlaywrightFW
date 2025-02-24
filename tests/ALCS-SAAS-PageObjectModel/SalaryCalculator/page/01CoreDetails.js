@@ -108,10 +108,10 @@ export default class CoreDetails{
 
             // Get the elements matching the XPath
             const elements = await this.page.locator(xpath);
-          
+            await this.page.waitForTimeout(2000);
             // Extract the text content from all elements
             const textContents = await elements.allTextContents();
-          
+            await this.page.waitForTimeout(2000);
             // Print the list of text contents
             console.log(textContents);
             //    const breakup = this.#selectindustrytype();

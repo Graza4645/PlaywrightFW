@@ -13,7 +13,7 @@ export default class BaseClass {
         this.page = null;
         this.isFirstRun = true;
         this.excelUtility = new ExcellUtility();
-        this.databaseutility = new Databaseutility();
+        this.databaseutility = new Databaseutility();;
         
     
     }
